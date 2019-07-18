@@ -1,0 +1,6 @@
+.idea
+*.iml
+
+cloud-gateway/target/
+cloud-security-oauth2-blog/target
+cloud-security-oauth2-server/target

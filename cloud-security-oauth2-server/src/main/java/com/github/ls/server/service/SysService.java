@@ -1,0 +1,29 @@
+package com.github.ls.server.service;
+
+import com.github.ls.server.dao.SysMenuDao;
+import com.github.ls.server.dao.SysRoleDao;
+import com.github.ls.server.dao.SysUserDao;
+import com.github.ls.server.entity.SysMenu;
+import com.github.ls.server.entity.SysUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class SysService {
+
+  @Autowired private SysUserDao sysUserDao;
+
+  @Autowired private SysMenuDao sysMenuDao;
+
+  @Autowired private SysRoleDao sysRoleDao;
+
+  public SysUser findUserByUsername(String username) {
+    return sysUserDao.findByUsername(username);
+  }
+
+  public List<SysMenu> findMenusByUsername(String username) {
+    return sysMenuDao.findByUsername(username);
+  }
+}
