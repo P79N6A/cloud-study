@@ -1,9 +1,13 @@
 .idea
 *.iml
-
+cloud-api/target
+cloud-facade/target
 cloud-gateway/target/
-cloud-security-oauth2-blog/target
+cloud-parent/target/
 cloud-security-oauth2-server/target
 cloud-security-web/node_modules
+cloud-service-bill/target
+cloud-service-blog/target
 cloud-service-book/target
+cloud-service-order/target
 cloud-service-wx/target
