@@ -11,3 +11,5 @@ cloud-service-blog/target
 cloud-service-book/target
 cloud-service-order/target
 cloud-service-wx/target
+log
+*.log
