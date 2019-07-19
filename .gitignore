@@ -5,3 +5,5 @@ cloud-gateway/target/
 cloud-security-oauth2-blog/target
 cloud-security-oauth2-server/target
 cloud-security-web/node_modules
+cloud-service-book/target
+cloud-service-wx/target

@@ -27,6 +27,8 @@
         <module>../cloud-gateway</module>
         <module>../cloud-security-oauth2-server</module>
         <module>../cloud-security-oauth2-blog</module>
+        <module>../cloud-service-book</module>
+        <module>../cloud-service-wx</module>
     </modules>
 
     <dependencies>

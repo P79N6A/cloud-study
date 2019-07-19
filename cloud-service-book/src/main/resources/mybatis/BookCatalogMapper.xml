@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ls.cloud.bookservice.dao.BookCatalogDao">
+
+
+    <sql id="querySql">
+               bookCatalog.id,
+               bookCatalog.book_name        `name`,
+               bookCatalog.book_url         `url`,
+               bookCatalog.book_author      `author`,
+               bookCatalog.book_size        `size`,
+               bookCatalog.book_last_update `lastUpdate`,
+               bookCatalog.book_last_name   `lastName`,
+               bookCatalog.book_last_url    `lastUrl`,
+               bookCatalog.book_status      `status`
+
+    </sql>
+
+    <insert id="insertOrUpdate" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO `book_catalog` (`book_name`, `book_url`, `book_author`,
+                                    `book_size`, `book_last_update`, `book_last_name`,
+                                    `book_last_url`, `book_status`)
+        VALUES (#{name}, #{url}, #{author},
+                #{size}, #{lastUpdate}, #{lastName},
+                #{lastUrl}, #{status})
+               ON
+               DUPLICATE
+               KEY
+        UPDATE
+            book_size=#{size}, book_last_update =#{lastUpdate}, book_last_name =#{lastName},
+            book_last_url=#{lastUrl}, book_status=#{status}
+    </insert>
+
+    <select id="queryBookCatalog" resultType="com.ls.cloud.bookservice.entity.BookCatalog">
+        select <include refid="querySql"></include>
+        from book_catalog bookCatalog
+        where id=#{id}
+    </select>
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ls.cloud.bookservice.dao.MyBookDao">
+
+    <sql id="querySql">
+        bookCatalog.id,
+        bookCatalog.book_name        `name`,
+        bookCatalog.book_url         `url`,
+        bookCatalog.book_author      `author`,
+        bookCatalog.book_size        `size`,
+        bookCatalog.book_last_update `lastUpdate`,
+        bookCatalog.book_last_name   `lastName`,
+        bookCatalog.book_last_url    `lastUrl`,
+        bookCatalog.book_status      `status`
+    </sql>
+    <insert id="addBook" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO my_book(open_id,book_id,book_name,book_author)
+         VALUES (#{openId},#{bookId},#{bookName},#{bookAuthor})
+    </insert>
+    <delete id="removeBook">
+        delete form my_book where open_id=#{openId} and book_id=#{bookId}
+    </delete>
+
+
+    <select id="queryMyBookByOpenId" resultType="com.ls.cloud.bookservice.entity.BookCatalog">
+        select
+        <include refid="querySql"></include>
+        from book_catalog bookCatalog,
+        my_book b
+        where b.open_id = #{openId}
+        and bookCatalog.id = b.book_id
+    </select>
+
+</mapper>
