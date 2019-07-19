@@ -1,4 +1,4 @@
-package com.github.ls.parent.entity;
+package com.github.ls.api.entity;
 
 import lombok.Data;
 

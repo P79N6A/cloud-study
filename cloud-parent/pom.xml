@@ -24,6 +24,7 @@
 
 
     <modules>
+        <module>../cloud-api</module>
         <module>../cloud-gateway</module>
         <module>../cloud-security-oauth2-server</module>
         <module>../cloud-security-oauth2-blog</module>
