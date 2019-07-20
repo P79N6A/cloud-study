@@ -16,4 +16,9 @@ public class Controller {
   public String echo(@PathVariable String str) {
     return restTemplate.getForObject("http://cloud-service-bill/echo/" + str, String.class);
   }
+
+  @RequestMapping(value = "/t1", method = RequestMethod.GET)
+  public String echo() {
+    return restTemplate.getForObject("http://cloud-service-bill/t1/", String.class);
+  }
 }

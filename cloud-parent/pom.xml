@@ -22,7 +22,6 @@
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     </properties>
 
-
     <modules>
         <module>../cloud-api</module>
         <module>../cloud-gateway</module>
@@ -33,6 +32,7 @@
         <module>../cloud-service-order</module>
         <module>../cloud-service-bill</module>
         <module>../cloud-facade</module>
+        <module>../cloud-dashborad</module>
     </modules>
 
     <dependencies>

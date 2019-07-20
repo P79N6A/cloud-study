@@ -20,5 +20,5 @@ cloud-service-book  书籍服务
 cloud-service-order 订单服务
 cloud-service-bill  账单服务
 
-
+cloud-dashborad http://localhost:8013/hystrix
 
