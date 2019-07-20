@@ -2,6 +2,8 @@
 
 spring cloud study
 
+使用nacos作为服务发现
+
 cloud-api  通用类
 
 cloud-gateway 网关
